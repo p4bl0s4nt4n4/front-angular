@@ -1,0 +1,35 @@
+<mat-form-field>
+  <mat-label>Filtrar</mat-label>
+  <input matInput (keyup)="aplicarFiltro($event)" placeholder="Ingrese criterio a buscar" #input />
+</mat-form-field>
+<table mat-table [dataSource]="datos" class="mat-elevation-z8" matSort>
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+    <td mat-cell *matCellDef="let dato">{{dato.id}}</td>
+  </ng-container>
+  <ng-container matColumnDef="estado">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+    <td mat-cell *matCellDef="let dato">{{dato.estado}}</td>
+  </ng-container>
+  <ng-container matColumnDef="operador">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Operador</th>
+    <td mat-cell *matCellDef="let dato">{{dato.operador}}</td>
+  </ng-container>
+  <ng-container matColumnDef="n_conexiones">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>N° Conexiones</th>
+    <td mat-cell *matCellDef="let dato">{{dato.n_conexiones}}</td>
+  </ng-container>
+  <ng-container matColumnDef="coordenadas">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Coordenadas</th>
+    <td mat-cell *matCellDef="let dato">{{dato.coordenadas}}</td>
+  </ng-container>
+  <ng-container matColumnDef="pais">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Pais</th>
+    <td mat-cell *matCellDef="let dato">{{dato.pais}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="cabecera_datos"></tr>
+  <tr mat-row *matRowDef="let row; columns:cabecera_datos"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+<router-outlet />
