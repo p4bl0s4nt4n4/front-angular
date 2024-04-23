@@ -1,6 +1,6 @@
 # front - angular
 
-Aplicación creada con Angular version 17.3.3.
+Aplicación creada con Angular version 17.3.3. Se considera solo trabajar con 20 registros.
 
 ## Para probar localmente
 
